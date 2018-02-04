@@ -1,0 +1,114 @@
+.image-container {
+    height: 40%;
+    width: 40%;
+    margin-top: 20px;
+}
+
+.image-container > img {
+    height: 100%;
+    width: 100%;
+}
+
+.history-tab-container {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 15px;
+}
+
+.history-tab {
+    background-color: #8dbf99;
+    color: white;
+    padding: 7px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.edit-history-container {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.historic-design {
+    width: 120px;
+    height: 70px;
+    flex: 0 0 auto;
+    padding-left: 20px;
+}
+
+.historic-design > img:hover {
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.design-hist-img {
+    width: 100%;
+    height: 100%;
+}
+
+.text-input-container {
+    background-color: white;
+    height: 220px;
+    margin: 20px;
+}
+
+.text-input-container > .inner-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 60px;
+    
+
+}
+
+.text-input-container > .heading {
+    font-size: large;
+    padding: 15px;
+}
+
+.text-input-container .label {
+    padding-left: 25px;
+}
+
+.text-input-container .color-bar {
+    background-color: #8dbf99;
+    border-radius: 10px;
+    height: 3px;
+    margin-left: 4px;
+    margin-right: 10px;
+}
+
+.back-button {
+    font-size: small;
+}
+
+.save-button-container {
+    background-color: white;
+    height: 80px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.save-button-container:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+}
+
+.save-button-container .label {
+    font-size: large;
+}
+
+.save-button-container .color-bar {
+    background-color: #8dbf99;
+    border-radius: 10px;
+    height: 3px;
+    margin-left: 4px;
+    margin-right: 10px;
+    width: 50%;
+}

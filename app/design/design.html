@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-xs-4">
+        <div class="text-input-container">
+            <div class="heading row middle-xs">
+                <div class="back-button">
+                    <a href="#!/home">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </a>
+                </div>
+                <div class="label">
+                    Add text input
+                </div>
+            </div>
+            <div class="color-bar"></div>
+            <div class="inner-container center-xs middle-xs">
+                <input type="text" ng-model="textInput"/>
+                <br/>
+                <button ng-click="addText()">Add Text</button>
+            </div>
+        </div>
+    </div>
+    <div class="image-container col-xs-5">
+        <canvas id="canvas">
+        </canvas>
+    </div>
+    <div class="col-xs-3 row middle-xs center-xs">
+        <div class="save-button-container center-xs middle-xs"
+            ng-click="saveChanges()">
+            <div class="label">Save</div>
+            <div class="color-bar"></div>
+        </div>
+    </div>
+</div>
+
+<div class="history-tab-container row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+        <div class="edit-history-container middle-xs"
+            ng-show="isShowEditHistory">
+            <div class="historic-design"
+                ng-repeat-start="design in designHistory"
+                ng-repeat-end>
+                <img class="design-hist-img" ng-src="{{design.src}}"
+                    ng-click="selectDesignFromHistory(design)"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2 row bottom-xs end-xs">
+        <div class="history-tab"
+            ng-click="toggleEditHistoryDialog()">
+                <i class="far fa-edit"></i> Edit History
+        </div>
+    </div>
+</div>

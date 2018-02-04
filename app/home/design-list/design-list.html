@@ -1,0 +1,49 @@
+<div class="row design-list-row">
+    <div class="col-sm-4">
+        <div class="top-color-bar"></div>
+        <div class="design-container" ng-click="openNewDesignPopup()">
+            Add new design
+        </div>
+    </div>
+    <div class="col-sm-4" 
+        ng-repeat-start = "design in designs" 
+        ng-repeat-end>
+        <div class="top-color-bar"></div>
+        <div class="design-container"
+            ng-click="openDesign(design)">
+            <img ng-src="{{design.src}}" class="design-img">
+        </div>
+    </div>
+</div>
+
+<div class="row center-xs middle-xs popup-container"
+    ng-click="closeNewDesignPopup()"
+    ng-show="isShowNewDesignPopup">
+    <div class="new-design-popup"
+        ng-click="$event.stopPropagation();">
+            <div class="row heading-row">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10 heading-label">
+                    Choose a design image
+                </div>
+                <div class="col-xs-1">
+                    <a ng-click="closeNewDesignPopup()">
+                        <i class="cross-button fas fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="row center-xs">
+                    <input type="file" id="file" fileread="design.file">
+                </div>
+                <br/>
+                <br/>
+                <div class="row center-xs">
+                    <!-- <div class="col-xs-1"></div> -->
+                    <button ng-click="uploadDesign()"
+                        ng-disabled="design.file === null">
+                        Upload</button>
+                </div>
+            </div>
+    </div>
+</div>
