@@ -17,7 +17,11 @@ angular.module('myApp.design-list', [])
         $scope.isShowNewDesignPopup = false;
     };
     $scope.uploadDesign = function() {
-        DesignListService.uploadDesign($scope.design.file);
+        DesignListService.uploadDesign($scope.design.file)
+            .then(function(data) {
+                $scope.designs.push(data);
+                $scope.isShowNewDesignPopup = false;
+            });
     };
     $scope.openDesign = function(design) {
         $location.path('design/' + design.id);

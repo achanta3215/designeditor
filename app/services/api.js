@@ -9,14 +9,14 @@ angular.module('myApp.services', [])
         var fd = new FormData();
         var file = document.getElementById('file').files[0];
         fd.append('file', file);
-        $http.post(url, fd, {
-            //headers: {'Content-Type': 'multipart/form-data' }//,
+        return $http.post(url, fd, {
             headers: {'Content-Type': undefined },
             transformRequest: angular.identity
-        })
-            .then(function(data){
-                console.log(data);
-            });
+        }).then(function(response){
+            var imgUrl = apiUrl + '/designFile?serverFileName=' + response.data.serverFileName;
+            response.data.src = imgUrl;
+            return response.data;
+        });
     };
     var fetchDesigns = function() {
         var url = apiUrl + "/designs";
